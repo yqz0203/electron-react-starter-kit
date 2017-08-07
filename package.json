@@ -3,6 +3,7 @@
     "version": "0.0.2",
     "main": "./dist/main.js",
     "devDependencies": {
+        "electron": "^1.6.11",        
         "autoprefixer": "^7.1.2",
         "babel-core": "^6.25.0",
         "babel-loader": "^7.1.1",
@@ -38,11 +39,11 @@
         "webpack-dev-server": "^2.6.1"
     },
     "scripts": {
-        "pack": "rm -rf build && electron-builder --dir",
-        "dist": "rm -rf build && electron-builder",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
         "dev": "cross-env NODE_ENV=development DEBUG='app:*' node ./config/server",
         "webpack": "npm run build:main && npm run build:renderer",
-        "build": "cross-env NODE_ENV=production DEBUG='app:*' npm run webpack && npm run test && npm run dist",
+        "build": "cross-env NODE_ENV=production DEBUG='app:*' npm run webpack && npm run dist",
         "build:run": "cross-env NODE_ENV=production DEBUG='app:*' npm run webpack && electron .",
         "build:main": "webpack --config ./config/webpack.main.js",
         "build:renderer": "webpack --config ./config/webpack.renderer.js",
@@ -50,7 +51,7 @@
     },
     "build": {
         "appId": "com.medlinker.his",
-        "productName": "QQ",
+        "productName": "HIS",
         "directories": {
             "output": "build"
         },
@@ -76,7 +77,6 @@
     "author": "yangqizhang@medlinker.com",
     "license": "MIT",
     "dependencies": {
-        "electron": "^1.6.11",
         "lodash": "^4.17.4",
         "react": "^15.6.1",
         "react-dom": "^15.6.1",
