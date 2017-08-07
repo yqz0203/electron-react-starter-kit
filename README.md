@@ -1,4 +1,4 @@
-# electron + react + starterkit
+# electron + react + starter-kit
 ____
 
 ## 命令列表
