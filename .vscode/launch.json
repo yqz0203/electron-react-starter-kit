@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "protocol": "inspector",
+            "type": "node",
+            "request": "attach",
+            "name": "Attach",
+            "port": 5858
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "nodemon",
+            "runtimeExecutable": "nodemon",
+            "args": [
+                "--exec",
+                "electron",
+                "./app/index.js"
+            ],
+            "restart": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "node",
+            "smartStep": true,
+            "request": "launch",
+            "name": "调试主进程",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+            "program": "${workspaceRoot}/app/index.js"
+        }
+    ]
+}

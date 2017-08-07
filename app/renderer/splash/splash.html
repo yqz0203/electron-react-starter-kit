@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            background: #4545ff;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-size: 40px;
+            justify-content: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        body{
+            opacity: 0;            
+        }
+
+        body.animate {
+            animation: fade 2s ease;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    MedLinker
+    <script>
+        const ipc = require('electron').ipcRenderer
+
+        setTimeout(() => {
+            ipc.send('slash-ok')
+        }, 3000)
+
+        window.addEventListener('load', () => {
+            document.body.classList.add('animate')
+        })
+    </script>
+</body>
+
+</html>

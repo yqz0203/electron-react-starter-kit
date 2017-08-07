@@ -1,0 +1,18 @@
+.main {
+    animation: font-ani 20s linear infinite;
+}
+
+@keyframes font-ani {
+    0% {
+        color: #fff;
+    }
+    33% {
+        color: #0000ff;
+    }
+    66% {
+        color: #00ff00;
+    }
+    100% {
+        color: #fff;
+    }
+}
